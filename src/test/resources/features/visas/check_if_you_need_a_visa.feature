@@ -12,14 +12,14 @@ Feature: Check if you need a visa to travel to the UK
 
   Scenario: Travellers from Japan do not need a visa for tourism
     Given Sara wants to travel to the UK
-    When Sara has a passport from Japan
-    And Sara is coming to the UK for Tourism
+    And she has a passport from Japan
+    When Sara wants to come to the UK for Tourism
     Then she should be told "You won’t need a visa to come to the UK"
 
   Scenario Outline: Travellers from Japan need a visa to study for longer than six months
     Given Sara wants to travel to the UK
-    When Sara has a passport from Japan
-    And Sara is coming to the UK to Study for <Duration>
+    And Sara has a passport from Japan
+    When Sara wants to come to the UK to Study for <Duration>
     Then she should be told "<Outcome>"
     Examples:
       | Duration             | Outcome                                  |
@@ -28,7 +28,7 @@ Feature: Check if you need a visa to travel to the UK
 
     Scenario: Normal travellers from Russia always need a visa
       Given Vlad wants to travel to the UK
-      When Vlad has a passport from Russia
-      And Vlad is coming to the UK for Tourism
+      And Vlad has a passport from Russia
+      When Vlad is coming to the UK for Tourism
       And Vlad is not travelling with or visiting a partner in the UK
       Then he should be told "You’ll need a visa to come to the UK"

@@ -32,12 +32,12 @@ public class VisaCheckStepDefinitions {
         theApplicant.hasAPassportFrom(country);
     }
 
-    @When("^(?:.*) is coming to the UK for (.*)$")
+    @When("^(?:.*) (?:is coming|wants to come) to the UK for (.*)$")
     public void declarePurpose(String purpose) {
         theApplicant.isComingToTheUKFor(purpose);
     }
 
-    @When("^(?:.*) is coming to the UK to (.*) for (.*)$")
+    @When("^(?:.*) (?:is coming|wants to come) to the UK to (.*) for (.*)$")
     public void declarePurposeAndDuraction(String purpose, String duration) {
         theApplicant.isComingToTheUKFor(purpose);
         theApplicant.plansToStayInTheUKFor(duration);
